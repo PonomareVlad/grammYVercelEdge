@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "(.*)",
+      "destination": "/api/index.mjs"
+    }
+  ],
+  "public": true,
+  "github": {
+    "silent": true
+  }
+}
