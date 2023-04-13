@@ -10,7 +10,7 @@ const getURL = ({
 }
 
 export default async ({headers}) => {
-    const result = await bot.api.setWebhook(getURL(headers));
+    const result = await bot.api.setWebhook(getURL({headers}));
     return new Response(JSON.stringify({result}));
 }
 
