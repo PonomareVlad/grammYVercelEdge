@@ -9,7 +9,7 @@
     "tunnel": "cloudflared tunnel --url http://localhost:3000"
   },
   "dependencies": {
-    "grammy": "^1.15.3"
+    "grammy": "^1.16.0"
   },
   "engines": {
     "node": "^18.0.0"
