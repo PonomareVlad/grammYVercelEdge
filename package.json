@@ -9,6 +9,7 @@
     "tunnel": "cloudflared tunnel --url http://localhost:3000"
   },
   "dependencies": {
+    "edge-grammy": "0.0.6",
     "grammy": "^1.16.0"
   },
   "engines": {
