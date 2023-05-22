@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "edge-grammy": "0.0.7",
-    "grammy": "^1.16.0"
+    "grammy": "^1.16.1"
   },
   "engines": {
     "node": "^18.0.0"
