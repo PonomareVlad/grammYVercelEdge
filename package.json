@@ -4,13 +4,17 @@
   "funding": "https://PonomareVlad.ru/donate",
   "license": "MIT",
   "scripts": {
-    "dev": "vc dev",
-    "dev-with-tunnel": "npm run tunnel & npm run dev",
-    "tunnel": "cloudflared tunnel --url http://localhost:3000"
+    "env": "vercel env pull .env",
+    "polling": "npm run env && npm run start",
+    "webhook": "npm run tunnel & vercel dev --listen 3000",
+    "tunnel": "cloudflared tunnel --url http://localhost:3000",
+    "start": "node --watch -r dotenv/config src/start.mjs"
   },
   "dependencies": {
-    "edge-grammy": "0.0.7",
-    "grammy": "^1.16.1"
+    "grammy": "^1.16.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.0"
   },
   "engines": {
     "node": "^18.0.0"

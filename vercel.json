@@ -1,0 +1,9 @@
+{
+  "functions": {
+    "**": {
+      "includeFiles": "*.json"
+    }
+  },
+  "buildCommand": "node src/webhook.mjs",
+  "installCommand": "npm ci --omit=dev"
+}
