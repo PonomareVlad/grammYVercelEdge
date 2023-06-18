@@ -4,6 +4,6 @@
       "includeFiles": "*.json"
     }
   },
-  "buildCommand": "node src/webhook.mjs",
-  "installCommand": "npm ci --omit=dev"
+  "installCommand": "npm ci --omit=dev",
+  "buildCommand": "node src/build.mjs"
 }

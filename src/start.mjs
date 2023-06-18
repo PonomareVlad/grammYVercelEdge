@@ -1,6 +1,4 @@
 import {bot} from "./bot.mjs";
+import {safeStart} from "vercel-grammy";
 
-process.once("SIGTERM", () => bot.stop());
-process.once("SIGINT", () => bot.stop());
-
-await bot.start();
+await safeStart(bot);

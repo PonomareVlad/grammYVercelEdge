@@ -56,8 +56,8 @@ npm run start
 
 - [src/data.mjs](src/data.mjs) — Data source for bot modules
 - [src/start.mjs](src/start.mjs) — Starts bot in long polling mode
+- [src/build.mjs](src/build.mjs) — Sets webhook and saves bot info
 - [api/update.mjs](api/update.mjs) — Function for receiving webhooks
-- [api/webhook.mjs](api/webhook.mjs) — Function for set webhooks in dev
-- [src/webhook.mjs](src/webhook.mjs) — Sets webhooks and saves bot info
+- [api/webhook.mjs](api/webhook.mjs) — Function for set webhook in dev
 
 Made with 💜 by [Vladislav Ponomarev](https://GitHub.com/PonomareVlad)
