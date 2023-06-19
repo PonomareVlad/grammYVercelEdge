@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "grammy": "^1.16.2",
-    "vercel-grammy": "0.0.4"
+    "vercel-grammy": "0.0.5"
   },
   "devDependencies": {
     "dotenv": "^16.3.0"
