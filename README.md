@@ -18,9 +18,9 @@ Select the appropriate option and deploy it to the cloud with [Vercel](https://v
 
 #### As Vercel project
 
-> Please note that you will need to create a Vercel project and set the bot token in the settings
+> Please note that you will need to create a Vercel project and [set the bot token](#as-local-project) in the settings
 
-##### Using long polling:
+##### Using long polling
 
 ```bash
 npm run polling
@@ -38,7 +38,7 @@ And open link from terminal (ends with `*.trycloudflare.com`) to set webhook URL
 
 #### As local project
 
-Create `.env` file and set variable:
+Set environment variable or create `.env` file:
 
 ```dotenv
 TELEGRAM_BOT_TOKEN="Telegram Bot Token from t.me/BotFather"
@@ -50,14 +50,21 @@ Run in long polling mode:
 npm run start
 ```
 
-> ✨ Now you can make some changes in [src/bot.mjs](src/bot.mjs)
+> 💡 This command does not require a Vercel account or CLI installation to run
 
-## Template structure:
+## Template structure
 
+- [src/bot.mjs](src/bot.mjs) — Bot initialization and logic
 - [src/data.mjs](src/data.mjs) — Data source for bot modules
 - [src/start.mjs](src/start.mjs) — Starts bot in long polling mode
 - [src/build.mjs](src/build.mjs) — Sets webhook and saves bot info
 - [api/update.mjs](api/update.mjs) — Function for receiving webhooks
 - [api/webhook.mjs](api/webhook.mjs) — Function for set webhook in dev
+
+## Related templates
+
+- [For Vercel Edge Functions](https://github.com/PonomareVlad/grammYVercelEdge)
+- [For Vercel Edge Functions with streaming response](https://github.com/PonomareVlad/grammYVercelEdgeStream)
+- [For Vercel Serverless Functions](https://github.com/PonomareVlad/grammYVercel)
 
 Made with 💜 by [Vladislav Ponomarev](https://GitHub.com/PonomareVlad)
