@@ -1,4 +1,4 @@
-import {Bot} from "grammy/web";
+import {Bot} from "grammy";
 import {token, botInfo} from "./data.mjs";
 
 export const bot = new Bot(token, {botInfo});

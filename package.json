@@ -11,11 +11,14 @@
     "start": "node --watch -r dotenv/config src/start.mjs"
   },
   "dependencies": {
-    "grammy": "^1.16.2",
-    "vercel-grammy": "0.0.7"
+    "grammy": "npm:@ponomarevlad/grammy@1.16.2-vercel-edge",
+    "vercel-grammy": "next"
   },
   "devDependencies": {
     "dotenv": "^16.3.0"
+  },
+  "overrides": {
+    "grammy": "npm:@ponomarevlad/grammy@1.16.2-vercel-edge"
   },
   "engines": {
     "node": "^18.0.0"
