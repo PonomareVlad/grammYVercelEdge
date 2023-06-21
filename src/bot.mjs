@@ -1,3 +1,4 @@
+import "./debug.mjs";
 import {Bot} from "grammy";
 import {token, botInfo} from "./data.mjs";
 
