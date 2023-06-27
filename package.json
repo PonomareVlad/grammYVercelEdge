@@ -8,17 +8,14 @@
     "polling": "npm run env && npm run start",
     "webhook": "npm run tunnel & vercel dev --listen 3000",
     "tunnel": "cloudflared tunnel --url http://localhost:3000",
-    "start": "node --watch -r dotenv/config src/start.mjs"
+    "start": "node --watch -r dotenv/config scripts/start.mjs"
   },
   "dependencies": {
-    "grammy": "npm:@ponomarevlad/grammy@1.16.2-vercel-edge",
-    "vercel-grammy": "next"
+    "grammy": "^1.17.1",
+    "vercel-grammy": "^0.1.0"
   },
   "devDependencies": {
-    "dotenv": "^16.3.0"
-  },
-  "overrides": {
-    "grammy": "npm:@ponomarevlad/grammy@1.16.2-vercel-edge"
+    "dotenv": "^16.3.1"
   },
   "engines": {
     "node": "^18.0.0"

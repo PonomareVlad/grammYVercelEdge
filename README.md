@@ -1,6 +1,24 @@
-## Telegram Bot Template for [Vercel Edge Functions](https://vercel.com/docs/concepts/functions/edge-functions)
+# Telegram Bot Template for [Vercel Edge Functions](https://vercel.com/docs/concepts/functions/edge-functions)
 
 > 📖 [Documentation for grammY](https://grammy.dev)
+
+## What does this template do for you
+
+### 1. Instant prototyping
+
+Just click the [blue button](#one-click-deploy) and change something in [src/bot.mjs](src/bot.mjs) in newly minted
+repository
+
+### 2. Universal bootstrap
+
+Use [webhooks](https://grammy.dev/guide/deployment-types.html#how-do-webhooks-work)
+or [long polling](https://grammy.dev/guide/deployment-types.html#how-does-long-polling-work) locally, even without a
+Vercel project or [CLI](https://vercel.com/docs/cli)
+
+### 3. Ready for production
+
+Webhooks will be automatically installed for every deployment on Vercel during
+the [build step](https://vercel.com/docs/concepts/deployments/builds)
 
 ## How to Use
 
@@ -18,7 +36,8 @@ Select the appropriate option and deploy it to the cloud with [Vercel](https://v
 
 #### As Vercel project
 
-> Please note that you will need to create a Vercel project and [set the bot token](#as-local-project) in the settings
+> Please note that you will need to create a Vercel project and [set the bot token](#environment-variables) in the
+> settings
 
 ##### Using long polling
 
@@ -26,13 +45,13 @@ Select the appropriate option and deploy it to the cloud with [Vercel](https://v
 npm run polling
 ```
 
-##### Using webhook with [CloudFlare tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/do-more-with-tunnels/trycloudflare/) ([`cloudflared`](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/)) :
+##### Using webhooks with [CloudFlare tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/do-more-with-tunnels/trycloudflare/) ([`cloudflared`](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/)) :
 
 ```bash
 npm run webhook
 ```
 
-And open link from terminal (ends with `*.trycloudflare.com`) to set webhook URL
+And open link from terminal (ends with `*.trycloudflare.com`) to set webhooks URL
 
 > If you want another tunnel, just use [`vercel dev`](https://vercel.com/docs/cli/dev)
 
@@ -52,14 +71,20 @@ npm run start
 
 > 💡 This command does not require a Vercel account or CLI installation to run
 
+## Environment variables
+
+- `TELEGRAM_BOT_TOKEN` — Telegram bot token
+  from [@BotFather](https://core.telegram.org/bots/tutorial#obtain-your-bot-token)
+- `TELEGRAM_SECRET_TOKEN` — [Secret token](https://core.telegram.org/bots/api#:~:text=secret_token) for incoming
+  requests
+
 ## Template structure
 
 - [src/bot.mjs](src/bot.mjs) — Bot initialization and logic
-- [src/data.mjs](src/data.mjs) — Data source for bot modules
-- [src/start.mjs](src/start.mjs) — Starts bot in long polling mode
-- [src/build.mjs](src/build.mjs) — Sets webhook and saves bot info
-- [api/update.mjs](api/update.mjs) — Function for receiving webhooks
-- [api/webhook.mjs](api/webhook.mjs) — Function for set webhook in dev
+- [scripts/start.mjs](scripts/start.mjs) — Starts bot in long polling mode
+- [scripts/build.mjs](scripts/build.mjs) — Sets webhook URL at build step
+- [api/webhook.mjs](api/webhook.mjs) — Function for set webhook URL at dev
+- [api/update.mjs](api/update.mjs) — Function for receiving updates
 
 ## Related templates
 

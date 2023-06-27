@@ -1,6 +1,17 @@
 import {Bot} from "grammy";
-import {token, botInfo} from "./data.mjs";
 
-export const bot = new Bot(token, {botInfo});
+export const {
 
-bot.on("message:text", async ctx => ctx.reply(ctx.msg.text));
+    // Telegram bot token from t.me/BotFather
+    TELEGRAM_BOT_TOKEN: token,
+
+    // Secret token to validate incoming updates
+    TELEGRAM_SECRET_TOKEN: secretToken = String(token).split(":").pop()
+
+} = process.env;
+
+// Default grammY bot instance
+export const bot = new Bot(token);
+
+// Sample handler for a simple echo bot
+bot.on("message:text", ctx => ctx.reply(ctx.msg.text));
