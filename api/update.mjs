@@ -5,6 +5,6 @@ export const config = {runtime: "edge"};
 
 // Default grammY handler for incoming updates via webhooks
 export default webhookCallback(bot, "std/http", {
-    timeoutMilliseconds: 29_000,
+    timeoutMilliseconds: 24_000,
     secretToken,
 });

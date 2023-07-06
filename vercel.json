@@ -1,4 +1,4 @@
 {
-  "installCommand": "npm ci --omit=dev",
+  "installCommand": "npm i --omit=dev",
   "buildCommand": "node scripts/build.mjs"
 }
