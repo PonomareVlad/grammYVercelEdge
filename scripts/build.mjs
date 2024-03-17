@@ -1,5 +1,5 @@
-import {getURL} from "vercel-grammy";
 import {bot, secretToken} from "../src/bot.mjs";
+import {getURL} from "vercel-grammy";
 
 const {VERCEL_ENV} = process.env;
 
@@ -8,6 +8,9 @@ const allowedEnvs = [
     "production",
     // "preview"
 ];
+
+// Check bot
+await bot.init()
 
 // Exit in case of unsuitable environments
 if (!allowedEnvs.includes(VERCEL_ENV)) process.exit();
@@ -26,5 +29,6 @@ if (await bot.api.setWebhook(url, options)) {
 
     console.info("Webhook set to URL:", url);
     console.info("Secret token:", secretToken);
+    console.info("Info:", bot.botInfo);
 
 }

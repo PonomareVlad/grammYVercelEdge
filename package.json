@@ -5,19 +5,15 @@
   "license": "MIT",
   "scripts": {
     "env": "vercel env pull .env",
-    "polling": "npm run env && npm run start",
-    "webhook": "npm run tunnel & vercel dev --listen 3000",
-    "tunnel": "cloudflared tunnel --url http://localhost:3000",
-    "start": "node --watch -r dotenv/config scripts/start.mjs"
+    "build": "node scripts/build.mjs",
+    "start:dev": "vercel dev --listen 3000",
+    "start:local": "node --watch --env-file=.env scripts/start.mjs",
+    "start:tunnel": "npx -y cloudflared tunnel --url http://localhost:3000",
+    "start:webhook": "npm run start:tunnel & npm run start:dev",
+    "start:polling": "npm run env && npm run start:local"
   },
   "dependencies": {
-    "grammy": "^1.19.1",
-    "vercel-grammy": "^0.2.1"
-  },
-  "devDependencies": {
-    "dotenv": "^16.3.1"
-  },
-  "engines": {
-    "node": "^18.0.0"
+    "grammy": "^1.21.1",
+    "vercel-grammy": "^1.0.0"
   }
 }
