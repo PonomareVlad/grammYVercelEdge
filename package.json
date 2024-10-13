@@ -13,7 +13,7 @@
     "start:polling": "npm run env && npm run start:local"
   },
   "dependencies": {
-    "grammy": "^1.21.1",
+    "grammy": "^1.30.0",
     "vercel-grammy": "^1.0.0"
   }
 }
