@@ -3,6 +3,9 @@ import { bot, secretToken as secret_token } from '../src/bot.mjs'
 // Check bot
 await bot.init()
 
+console.info('Info:', bot.botInfo)
+console.info('Secret token:', secret_token)
+
 // Default Vercel hostnames
 const {
     VERCEL_URL = 'localhost',
@@ -18,8 +21,6 @@ if (await bot.api.setWebhook(url.href, { secret_token })) {
     // Checking the webhook installation
     const { url } = await bot.api.getWebhookInfo()
 
-    console.info('Secret token:', secret_token)
     console.info('Webhook set to URL:', url)
-    console.info('Info:', bot.botInfo)
 
 }
