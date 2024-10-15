@@ -16,14 +16,6 @@ await bot.init()
 // Exit in case of unsuitable environments
 if (!allowedEnvs.includes(VERCEL_ENV)) process.exit()
 
-// Paths to remove at allowed environment
-const paths = [
-    'public/index.html',
-]
-
-// Remove necessary paths
-await Promise.all(paths.map(path => rm(path))).catch()
-
 // Webhook URL generation
 const url = getURL({ path: 'api/update' })
 
