@@ -1,7 +1,10 @@
 import { bot, secretToken as secret_token } from '../src/bot.mjs'
 
+// Check bot
+await bot.init()
+
 // Default Vercel hostnames
-export const {
+const {
     VERCEL_URL = 'localhost',
     VERCEL_BRANCH_URL: hostname = VERCEL_URL,
 } = process.env
