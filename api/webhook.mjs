@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { bot, secretToken } from '../src/bot.mjs'
 import { setWebhookCallback } from 'vercel-grammy'
 
