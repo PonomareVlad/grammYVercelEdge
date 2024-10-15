@@ -1,6 +1,5 @@
 import { bot, secretToken } from '../src/bot.mjs'
 import { getURL } from 'vercel-grammy'
-import { rm } from 'node:fs/promises'
 
 const { VERCEL_ENV } = process.env
 
@@ -17,7 +16,7 @@ await bot.init()
 if (!allowedEnvs.includes(VERCEL_ENV)) process.exit()
 
 // Webhook URL generation
-const url = getURL({ path: 'api/update' })
+const url = getURL({ path: 'api/webhook' })
 
 // Webhook setup options
 const options = { secret_token: secretToken }
