@@ -30,7 +30,7 @@ and [connect the repository to your project on Vercel](https://vercel.com/new).
    and [link Vercel project](https://vercel.com/docs/cli/project-linking)
 2. Pull envs from Vercel (`npm run env`) or set them in a `.env` file
 3. Run the bot in polling mode (`npm start`)
-   or [start the Vercel dev server](https://vercel.com/docs/cli/dev)
+   or [use the Vercel dev server](https://vercel.com/docs/cli/dev)
 
 ### Vercel deployment
 
