@@ -1,92 +1,64 @@
-> Deprecated, try [new version](https://github.com/PonomareVlad/grammYVercel) instead ✨ 
+# [Telegram Bot](https://core.telegram.org/bots) Template for [Vercel](https://vercel.com)
 
-# Telegram Bot Template for [Vercel Edge Functions](https://vercel.com/docs/concepts/functions/edge-functions)
+This template is built on the [grammY](https://grammy.dev), thanks to which it
+supports
+both [Serverless (Node.js)](https://vercel.com/docs/functions/runtimes/node-js)
+and [Edge Runtime](https://vercel.com/docs/functions/runtimes/edge-runtime).
 
-> 📖 [Documentation for grammY](https://grammy.dev)
+## How to use
 
-## What does this template do for you
+### A. Click the `Deploy` button ...
 
-### 1. Instant prototyping
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FPonomareVlad%2FgrammYVercel&env=TELEGRAM_BOT_TOKEN&envDescription=Telegram%20Bot%20Token%20from%20%40BotFather&envLink=https%3A%2F%2Fcore.telegram.org%2Fbots%2Ftutorial%23obtain-your-bot-token&project-name=telegram-bot&repository-name=telegram-bot&redirect-url=https%3A%2F%2Fgrammy.dev&demo-title=grammY&demo-description=Documantation%20for%20grammY&demo-url=https%3A%2F%2Fgrammy.dev&demo-image=https%3A%2F%2Fgrammy.dev%2Fimages%2FgrammY.png)
 
-Just click the [blue button](#one-click-deploy) and change something in [src/bot.mjs](src/bot.mjs) in newly minted
-repository
+... and follow the instructions on next page.
 
-### 2. Universal bootstrap
+### B. Click the `Use this template` button ...
 
-Use [webhooks](https://grammy.dev/guide/deployment-types.html#how-do-webhooks-work)
-or [long polling](https://grammy.dev/guide/deployment-types.html#how-does-long-polling-work) locally, even without a
-Vercel project or [CLI](https://vercel.com/docs/cli)
+...
+and [connect the repository to your project on Vercel](https://vercel.com/new).
 
-### 3. Ready for production
+### C. Clone the template to your host ...
 
-Webhooks will be automatically installed for every deployment on Vercel during
-the [build step](https://vercel.com/docs/concepts/deployments/builds)
+... and [run the bot locally](#local-development).
 
-## How to Use
+## Workflow
 
-You can choose from one of the following two methods to use this repository:
+### Local development
 
-### One-Click Deploy
+1. Install dependencies (`npm i`)
+   and [link Vercel project](https://vercel.com/docs/cli/project-linking)
+2. Pull envs from Vercel (`npm run env`) or set them in a `.env` file
+3. Run the bot in polling mode (`npm start`)
+   or [use the Vercel dev server](https://vercel.com/docs/cli/dev)
 
-Deploy the template using [Vercel](https://vercel.com):
+### Vercel deployment
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FPonomareVlad%2FgrammYVercelEdge&env=TELEGRAM_BOT_TOKEN&envDescription=Telegram%20Bot%20Token%20from%20%40BotFather&envLink=https%3A%2F%2Fcore.telegram.org%2Fbots%2Ftutorial%23obtain-your-bot-token&project-name=grammy-vercel-edge&repository-name=grammy-vercel-edge)
+When you push a commit to a GitHub repository, Vercel runs `scripts/build.mjs`
+and assigns a unique URL that will be set as the URL for incoming webhooks.
 
-### Clone and Deploy
+### Lifecycle
 
-Select the appropriate option and deploy it to the cloud with [Vercel](https://vercel.com/new)
+Until you run the bot locally, your code will run on the Vercel side, where you
+can view [runtime logs](https://vercel.com/docs/observability/runtime-logs) and
+[usage](https://vercel.com/docs/pricing/manage-and-optimize-usage#viewing-usage).
 
-#### As Vercel project
+## About this template
 
-> Please note that you will need to create a Vercel project and [set the bot token](#environment-variables) in the
-> settings
+### Environment variables
 
-##### Using long polling
+#### Telegram bot token from [@BotFather](https://core.telegram.org/bots/tutorial#obtain-your-bot-token) (required)
 
-```bash
-npm run polling
+```env
+TELEGRAM_BOT_TOKEN = "..."
 ```
 
-##### Using webhooks with [CloudFlare tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/do-more-with-tunnels/trycloudflare/) ([`cloudflared`](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/)) :
+#### [Secret token](https://core.telegram.org/bots/api#:~:text=secret_token) for incoming requests (optional)
 
-```bash
-npm run webhook
+```env
+TELEGRAM_SECRET_TOKEN = "..."
 ```
 
-And open link from terminal (ends with `*.trycloudflare.com`) to set webhooks URL
+## Credits
 
-> If you want another tunnel, just use [`vercel dev`](https://vercel.com/docs/cli/dev)
-
-#### As local project
-
-Set environment variable or create `.env` file:
-
-```dotenv
-TELEGRAM_BOT_TOKEN="Telegram Bot Token from t.me/BotFather"
-```
-
-Run in long polling mode:
-
-```bash
-npm run start
-```
-
-> 💡 This command does not require a Vercel account or CLI installation to run
-
-## Environment variables
-
-- `TELEGRAM_BOT_TOKEN` — Telegram bot token
-  from [@BotFather](https://core.telegram.org/bots/tutorial#obtain-your-bot-token)
-- `TELEGRAM_SECRET_TOKEN` — [Secret token](https://core.telegram.org/bots/api#:~:text=secret_token) for incoming
-  requests
-
-## Template structure
-
-- [src/bot.mjs](src/bot.mjs) — Bot initialization and logic
-- [scripts/start.mjs](scripts/start.mjs) — Starts bot in long polling mode
-- [scripts/build.mjs](scripts/build.mjs) — Sets webhook URL at build step
-- [api/webhook.mjs](api/webhook.mjs) — Function for set webhook URL at dev
-- [api/update.mjs](api/update.mjs) — Function for receiving updates
-
-
-Made with 💜 by [Vladislav Ponomarev](https://GitHub.com/PonomareVlad)
+Made with 🌚 by [Vladislav Ponomarev](https://github.com/PonomareVlad)

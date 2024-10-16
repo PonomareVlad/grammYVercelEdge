@@ -1,19 +1,15 @@
 {
-  "name": "grammy-vercel-edge",
-  "author": "Vladislav Ponomarev <PonomareVlad@users.noreply.github.com> (https://PonomareVlad.ru)",
-  "funding": "https://PonomareVlad.ru/donate",
-  "license": "MIT",
-  "scripts": {
-    "env": "vercel env pull .env",
-    "build": "node scripts/build.mjs",
-    "start:dev": "vercel dev --listen 3000",
-    "start:local": "node --watch --env-file=.env scripts/start.mjs",
-    "start:tunnel": "npx -y cloudflared tunnel --url http://localhost:3000",
-    "start:webhook": "npm run start:tunnel & npm run start:dev",
-    "start:polling": "npm run env && npm run start:local"
-  },
-  "dependencies": {
-    "grammy": "^1.30.0",
-    "vercel-grammy": "^1.0.0"
-  }
+    "name": "grammy-vercel-edge",
+    "author": "Vladislav Ponomarev <PonomareVlad@users.noreply.github.com> (https://PonomareVlad.ru)",
+    "funding": "https://PonomareVlad.ru/donate",
+    "license": "MIT",
+    "scripts": {
+        "postprepare": "touch .env",
+        "env": "npx vercel env pull .env",
+        "build": "node scripts/build.mjs",
+        "start": "node --watch --env-file=.env scripts/start.mjs"
+    },
+    "dependencies": {
+        "grammy": "^1.17.1"
+    }
 }

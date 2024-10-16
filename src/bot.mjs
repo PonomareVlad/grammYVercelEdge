@@ -1,4 +1,4 @@
-import {Bot} from "grammy";
+import { Bot } from 'grammy'
 
 export const {
 
@@ -6,12 +6,12 @@ export const {
     TELEGRAM_BOT_TOKEN: token,
 
     // Secret token to validate incoming updates
-    TELEGRAM_SECRET_TOKEN: secretToken = String(token).split(":").pop()
+    TELEGRAM_SECRET_TOKEN: secretToken = String(token).split(':').pop(),
 
-} = process.env;
+} = process.env
 
 // Default grammY bot instance
-export const bot = new Bot(token);
+export const bot = new Bot(token)
 
 // Sample handler for a simple echo bot
-bot.on("message:text", ctx => ctx.reply(ctx.msg.text));
+bot.on('message:text', ctx => ctx.reply(ctx.msg.text))

@@ -1,0 +1,7 @@
+{
+    "prettier.mode": "Auto",
+    "editor.formatOnSave": true,
+    "editor.guides": [
+        80
+    ]
+}
