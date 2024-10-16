@@ -27,8 +27,11 @@ and [connect the repository to your project on Vercel](https://vercel.com/new).
 ### Local development
 
 1. Install dependencies (`npm i`)
-2. Pull envs from Vercel (`npm run env`) or edit `.env`
-3. Run bot in polling mode (`npm start`) or start `vercel dev` server
+   and [link Vercel project](https://vercel.com/docs/cli/project-linking) (
+   optional)
+2. Pull envs from Vercel (`npm run env`) or set them in a `.env` file
+3. Run the bot in polling mode (`npm start`)
+   or [start the Vercel dev server](https://vercel.com/docs/cli/dev)
 
 ### Vercel deployment
 
