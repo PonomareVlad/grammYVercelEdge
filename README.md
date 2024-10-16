@@ -34,7 +34,7 @@ and [connect the repository to your project on Vercel](https://vercel.com/new).
 
 ### Vercel deployment
 
-When you push a commit to a GitHub repository, Vercel runs `scripts/build.mjs`
+When you push a commit to a GitHub repository, Vercel runs build script
 and assigns a unique URL that will be set as the URL for incoming webhooks.
 
 ### Lifecycle
