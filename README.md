@@ -28,20 +28,29 @@ and [connect the repository to your project on Vercel](https://vercel.com/new).
 
 1. Install dependencies (`npm i`)
    and [link Vercel project](https://vercel.com/docs/cli/project-linking)
-2. Pull envs from Vercel (`npm run env`) or set them in a `.env` file
-3. Run the bot in polling mode (`npm start`)
-   or [use the Vercel dev server](https://vercel.com/docs/cli/dev)
+2. Pull
+   [envs from Vercel](https://vercel.com/docs/projects/environment-variables/managing-environment-variables) (
+   `npm run env`) or set them in a `.env` file
+3. Run the bot
+   in [polling mode](https://grammy.dev/guide/deployment-types.html#how-does-long-polling-work) (
+   `npm start`) or [use the Vercel dev server](https://vercel.com/docs/cli/dev)
 
 ### Vercel deployment
 
-When you push a commit to a GitHub repository, Vercel runs build script
-and assigns a unique URL that will be set as the URL for incoming webhooks.
+When
+you [push a commit to a GitHub repository](https://vercel.com/docs/deployments/git/vercel-for-github#a-deployment-for-each-push),
+Vercel runs [build script](scripts/build.mjs) and assigns
+a [unique URL](https://vercel.com/docs/deployments/generated-urls) that will be
+set as the URL for
+incoming [webhooks](https://grammy.dev/guide/deployment-types.html#how-do-webhooks-work).
 
 ### Lifecycle
 
-Until you run the bot locally, your code will run on the Vercel side, where you
-can view [runtime logs](https://vercel.com/docs/observability/runtime-logs) and
-[usage](https://vercel.com/docs/pricing/manage-and-optimize-usage#viewing-usage).
+Until you [run the bot locally](#local-development), your code will [run on the
+Vercel](https://vercel.com/docs/functions/concepts#functions-lifecycle) side,
+where you can
+view [runtime logs](https://vercel.com/docs/observability/runtime-logs)
+and [usage](https://vercel.com/docs/pricing/manage-and-optimize-usage#viewing-usage).
 
 ## About this template
 
